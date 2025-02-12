@@ -1,7 +1,13 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
-  serverBuildPath: "build/server/index.js", // Pfad zum Server-Build für Cloudflare Pages Functions
-  serverModuleFormat: "esm", // ESM ist für Cloudflare Workers empfohlen
-  // Ignoriere leere CSS-Module Warnung (optional, falls Sie CSS-Module verwenden)
-  serverDependenciesToBundle: ['@remix-run/cloudflare-pages']
+  ignoredRouteFiles: ["**/.*"],
+  serverBuildPath: "functions/[[path]].js", // Angepasst für CF Pages Functions!
+  serverModuleFormat: "esm",
+  serverDependenciesToBundle: ['@remix-run/cloudflare-pages', 'istextorbinary'], // 'istextorbinary' als Workaround für 'path'
+  postcss: true, // Wichtig für SCSS und Tailwind CSS (falls verwendet)
+  unocss: true,  // UnoCSS aktivieren
+  plugins: [
+    ...(module.exports.plugins || []), // Wichtig, um bestehende Plugins zu behalten
+    require('esbuild-sass-plugin')(), // SCSS Unterstützung hinzufügen
+  ],
 };
