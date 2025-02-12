@@ -7,7 +7,7 @@ import * as dotenv from 'dotenv';
 import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-
+import sass from 'vite-plugin-sass';
 dotenv.config();
 
 // Get detailed git info with fallbacks
