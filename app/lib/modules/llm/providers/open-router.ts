@@ -40,8 +40,8 @@ export default class OpenRouterProvider extends BaseProvider {
       maxTokenAllowed: 8000,
     },
     {
-      name: 'deepseek/deepseek-coder',
-      label: 'Deepseek-Coder V2 236B (OpenRouter)',
+      name: 'deepseek/deepseek-chat',
+      label: 'Nebius-Deepseek-V3',
       provider: 'OpenRouter',
       maxTokenAllowed: 8000,
     },
