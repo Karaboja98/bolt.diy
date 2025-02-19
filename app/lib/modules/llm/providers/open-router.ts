@@ -29,7 +29,7 @@ export default class OpenRouterProvider extends BaseProvider {
   staticModels: ModelInfo[] = [
     {
       name: 'anthropic/claude-3.5-sonnet',
-      label: 'Anthropic: Claude 3.5 Sonnet (OpenRouter)',
+      label: 'Google-Vertex-Claudev3',
       provider: 'OpenRouter',
       maxTokenAllowed: 8000,
     },
